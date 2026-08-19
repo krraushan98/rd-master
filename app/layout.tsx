@@ -15,7 +15,22 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: 'RD Master | The Ultimate DOP Agent Automation App',
   description: 'Automate schedule generation, calculate real-time fines, and manage over 20,000 Recurring Deposit accounts effortlessly. Built exclusively for India Post DOP agents.',
-  keywords: 'DOP agent app, RD automation, India Post RD schedule, post office agent software, calculate RD fine',
+  keywords: 'DOP agent app, RD automation, India Post RD schedule, post office agent software, calculate RD fine,DOP agent software',
+  openGraph: {
+    title: 'RD Master | The Ultimate DOP Agent Automation App',
+    description: 'Automate your RD schedules, calculate fines in real-time, and batch update ASLAAS numbers. Download the APK now.',
+    url: 'https://rd-master-web.vercel.app',
+    siteName: 'RD Master',
+    images: [
+      {
+        url: 'https://rd-master.vercel.app/og-image.png', 
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
