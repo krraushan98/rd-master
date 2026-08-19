@@ -442,22 +442,22 @@ export default function Home() {
           <p className="text-lg text-slate-600 mb-12">{currentLang.support.desc}</p>
           
           <div className="grid sm:grid-cols-3 gap-5">
-            <a href="tel:+919876543210" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40 transition">
+            <a href="tel:+916206944296" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40 transition">
               <Phone className="w-7 h-7 text-blue-600 mb-3" />
               <span className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">{currentLang.support.phone}</span>
-              <span className="font-bold text-slate-800 text-sm">+91 9876543210</span>
+              <span className="font-bold text-slate-800 text-sm">+91 6206944296</span>
             </a>
 
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center p-6 rounded-2xl bg-green-50/60 border border-green-200/70 hover:border-green-300 hover:bg-green-50 transition">
+            <a href="https://wa.me/+916206944296" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center p-6 rounded-2xl bg-green-50/60 border border-green-200/70 hover:border-green-300 hover:bg-green-50 transition">
               <MessageCircle className="w-7 h-7 text-green-600 mb-3" />
               <span className="text-xs uppercase tracking-wider text-green-700 font-bold mb-1">{currentLang.support.chat}</span>
               <span className="font-bold text-green-900 text-sm">{currentLang.support.chatDesc}</span>
             </a>
 
-            <a href="mailto:support@example.com" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40 transition">
+            <a href="mailto:raushanpandit718@gmail.com" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40 transition">
               <Mail className="w-7 h-7 text-blue-600 mb-3" />
               <span className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">{currentLang.support.email}</span>
-              <span className="font-bold text-slate-800 text-sm">support@example.com</span>
+              <span className="font-bold text-slate-800 text-sm">raushanpandit718@gmail.com</span>
             </a>
           </div>
         </div>
