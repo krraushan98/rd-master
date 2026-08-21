@@ -239,7 +239,7 @@ export default function Home() {
           
           <div id="download" className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a 
-              href="https://github.com/krraushan98/rd-master-web/releases/download/v1.0.0/RdMaster_v_1.6.apk" 
+              href="https://github.com/krraushan98/rd-master/releases/download/v1.0.7/RdMaster_v_1.7.apk" 
               className="w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-9 py-4 rounded-2xl text-lg font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all"
             >
               <Download className="w-6 h-6" />
