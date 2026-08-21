@@ -162,26 +162,26 @@ export default function Home() {
 
   const currentLang = t[lang as keyof typeof t];
 
-  // Map icons to the translated features list with the new theme color
+  // Feature icons fully in blue theme
   const featureIcons = [
-    <Zap key="1" className="w-7 h-7 text-[#c62829]" />,
-    <Smartphone key="2" className="w-7 h-7 text-[#c62829]" />,
-    <FileText key="3" className="w-7 h-7 text-[#c62829]" />,
-    <ShieldCheck key="4" className="w-7 h-7 text-[#c62829]" />,
-    <RefreshCw key="5" className="w-7 h-7 text-[#c62829]" />,
-    <Calculator key="6" className="w-7 h-7 text-[#c62829]" />,
-    <FileSpreadsheet key="7" className="w-7 h-7 text-[#c62829]" />,
-    <TrendingUp key="8" className="w-7 h-7 text-[#c62829]" />
+    <Zap key="1" className="w-7 h-7 text-blue-600" />,
+    <Smartphone key="2" className="w-7 h-7 text-blue-600" />,
+    <FileText key="3" className="w-7 h-7 text-blue-600" />,
+    <ShieldCheck key="4" className="w-7 h-7 text-blue-600" />,
+    <RefreshCw key="5" className="w-7 h-7 text-blue-600" />,
+    <Calculator key="6" className="w-7 h-7 text-blue-600" />,
+    <FileSpreadsheet key="7" className="w-7 h-7 text-blue-600" />,
+    <TrendingUp key="8" className="w-7 h-7 text-blue-600" />
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-[#c62829] selection:text-white">
+    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white">
       
       {/* Navigation */}
       <nav className="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md shadow-red-500/20">
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md shadow-blue-500/20">
               <Image 
                 src="/app-icon.png" 
                 alt="RD Master Logo" 
@@ -190,20 +190,19 @@ export default function Home() {
                 priority
               />
             </div>
-            <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-red-800 to-[#c62829] bg-clip-text text-transparent">
+            <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-blue-700 to-sky-600 bg-clip-text text-transparent">
               RD Master
             </span>
           </div>
           
           <div className="flex items-center gap-6">
-            <a href="#features" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-[#c62829] transition">{currentLang.nav.features}</a>
-            <a href="#how-to-use" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-[#c62829] transition">{currentLang.nav.tutorials}</a>
-            <a href="#support" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-[#c62829] transition">{currentLang.nav.support}</a>
+            <a href="#features" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-blue-600 transition">{currentLang.nav.features}</a>
+            <a href="#how-to-use" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-blue-600 transition">{currentLang.nav.tutorials}</a>
+            <a href="#support" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-blue-600 transition">{currentLang.nav.support}</a>
             
-            {/* Language Toggle Button */}
             <button 
               onClick={() => setLang(lang === 'en' ? 'hi' : 'en')}
-              className="flex items-center gap-2 text-slate-600 hover:text-[#c62829] transition bg-slate-100 px-3 py-2 rounded-lg text-sm font-bold"
+              className="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition bg-slate-100 px-3 py-2 rounded-lg text-sm font-bold"
             >
               <Globe className="w-4 h-4" />
               {currentLang.nav.langToggle}
@@ -211,7 +210,7 @@ export default function Home() {
 
             <a 
               href="#download" 
-              className="hidden sm:block bg-gradient-to-r from-[#c62829] to-red-800 text-white px-5 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-red-500/30 transition text-sm"
+              className="hidden sm:block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-blue-500/30 transition text-sm"
             >
               {currentLang.nav.getApp}
             </a>
@@ -220,16 +219,16 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 pb-28 text-center bg-gradient-to-b from-red-50/50 to-transparent">
+      <section className="relative overflow-hidden pt-20 pb-28 text-center bg-gradient-to-b from-blue-50/50 to-transparent">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100/70 border border-red-200/60 text-red-800 text-xs sm:text-sm font-bold mb-8">
-            <span className="flex h-2 w-2 rounded-full bg-[#c62829] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100/70 border border-blue-200/60 text-blue-800 text-xs sm:text-sm font-bold mb-8">
+            <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
             {currentLang.hero.badge}
           </div>
           
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
             {currentLang.hero.title1} <br />
-            <span className="bg-gradient-to-r from-[#c62829] via-red-600 to-red-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent">
               {currentLang.hero.title2}
             </span>
           </h1>
@@ -241,7 +240,7 @@ export default function Home() {
           <div id="download" className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a 
               href="https://github.com/krraushan98/rd-master-web/releases/download/v1.0.0/RdMaster_v_1.6.apk" 
-              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-[#c62829] to-red-800 text-white px-9 py-4 rounded-2xl text-lg font-bold shadow-xl shadow-red-500/25 hover:shadow-red-500/40 hover:-translate-y-0.5 transition-all"
+              className="w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-9 py-4 rounded-2xl text-lg font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all"
             >
               <Download className="w-6 h-6" />
               {currentLang.hero.download}
@@ -250,7 +249,7 @@ export default function Home() {
               href="#how-to-use"
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-7 py-4 rounded-2xl text-lg font-semibold hover:bg-slate-50 transition"
             >
-              <PlayCircle className="w-5 h-5 text-[#c62829]" />
+              <PlayCircle className="w-5 h-5 text-blue-600" />
               {currentLang.hero.demo}
             </a>
           </div>
@@ -267,21 +266,21 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-lg shadow-slate-100">
-            <div className="aspect-[9/16] bg-gradient-to-b from-red-100/50 to-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-200">
+            <div className="aspect-[9/16] bg-gradient-to-b from-blue-100/50 to-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-200">
               <Image src="/screenshots/dashboard.png" alt="RD Master Dashboard" fill className="object-cover" />
             </div>
             <h3 className="font-bold text-center mt-4 text-slate-800">{currentLang.gallery.img1}</h3>
           </div>
 
           <div className="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-lg shadow-slate-100">
-            <div className="aspect-[9/16] bg-gradient-to-b from-red-100/50 to-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-200">
+            <div className="aspect-[9/16] bg-gradient-to-b from-blue-100/50 to-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-200">
               <Image src="/screenshots/schedule.png" alt="Schedule Generation" fill className="object-cover" />
             </div>
             <h3 className="font-bold text-center mt-4 text-slate-800">{currentLang.gallery.img2}</h3>
           </div>
 
           <div className="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-lg shadow-slate-100">
-            <div className="aspect-[9/16] bg-gradient-to-b from-red-100/50 to-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-200">
+            <div className="aspect-[9/16] bg-gradient-to-b from-blue-100/50 to-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-200">
               <Image src="/screenshots/aslaas.png" alt="ASLAAS Update Tool" fill className="object-cover" />
             </div>
             <h3 className="font-bold text-center mt-4 text-slate-800">{currentLang.gallery.img3}</h3>
@@ -301,10 +300,10 @@ export default function Home() {
             {currentLang.featuresList.map((feat, idx) => (
               <div 
                 key={idx} 
-                className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:shadow-red-500/5 hover:border-red-200/80 transition-all duration-300 flex flex-col justify-between"
+                className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-200/80 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-14 h-14 rounded-xl bg-red-100/70 flex items-center justify-center mb-5">
+                  <div className="w-14 h-14 rounded-xl bg-blue-100/70 flex items-center justify-center mb-5">
                     {featureIcons[idx]}
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">{feat.title}</h3>
@@ -341,18 +340,18 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col gap-6">
-            <div className="bg-gradient-to-br from-red-800 to-red-950 text-white p-8 rounded-3xl shadow-xl flex flex-col justify-between">
+            <div className="bg-gradient-to-br from-blue-700 to-indigo-800 text-white p-8 rounded-3xl shadow-xl flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
                   <BookOpen className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{currentLang.tutorial.pdfTitle}</h3>
-                <p className="text-red-100 text-sm leading-relaxed mb-6">{currentLang.tutorial.pdfDesc}</p>
+                <p className="text-blue-100 text-sm leading-relaxed mb-6">{currentLang.tutorial.pdfDesc}</p>
               </div>
               <a 
                 href="/docs/RD_Master_User_Manual.pdf" 
                 download
-                className="w-full bg-white text-red-900 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-red-50 transition shadow-md"
+                className="w-full bg-white text-blue-900 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-50 transition shadow-md"
               >
                 <Download className="w-5 h-5" />
                 {currentLang.tutorial.pdfBtn}
@@ -361,7 +360,7 @@ export default function Home() {
 
             <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm">
               <h4 className="font-bold text-slate-900 mb-3 flex items-center gap-2">
-                <CheckCircle2 className="text-[#c62829] w-5 h-5" />
+                <CheckCircle2 className="text-blue-600 w-5 h-5" />
                 {currentLang.tutorial.reqTitle}
               </h4>
               <ul className="text-sm text-slate-600 space-y-2">
@@ -376,9 +375,9 @@ export default function Home() {
 
       {/* Military-Grade Security Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-gradient-to-r from-red-900 via-red-950 to-slate-950 rounded-[2.5rem] p-10 sm:p-16 text-white flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-950 rounded-[2.5rem] p-10 sm:p-16 text-white flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl relative overflow-hidden">
           <div className="max-w-2xl relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-bold mb-6 border border-red-400/20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold mb-6 border border-blue-400/20">
               <Lock className="w-3.5 h-3.5" /> {currentLang.security.badge}
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">{currentLang.security.title}</h2>
@@ -387,26 +386,26 @@ export default function Home() {
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="text-red-400 w-5 h-5 flex-shrink-0" />
+                <CheckCircle2 className="text-sky-400 w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-semibold">{currentLang.security.li1}</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="text-red-400 w-5 h-5 flex-shrink-0" />
+                <CheckCircle2 className="text-sky-400 w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-semibold">{currentLang.security.li2}</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="text-red-400 w-5 h-5 flex-shrink-0" />
+                <CheckCircle2 className="text-sky-400 w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-semibold">{currentLang.security.li3}</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="text-red-400 w-5 h-5 flex-shrink-0" />
+                <CheckCircle2 className="text-sky-400 w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-semibold">{currentLang.security.li4}</span>
               </div>
             </div>
           </div>
           <div className="flex-shrink-0 relative z-10">
-            <div className="w-40 h-40 sm:w-56 sm:h-56 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center backdrop-blur-3xl shadow-inner">
-              <Lock className="w-20 h-20 sm:w-28 sm:h-28 text-red-400 opacity-90" />
+            <div className="w-40 h-40 sm:w-56 sm:h-56 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center backdrop-blur-3xl shadow-inner">
+              <Lock className="w-20 h-20 sm:w-28 sm:h-28 text-sky-400 opacity-90" />
             </div>
           </div>
         </div>
@@ -424,7 +423,7 @@ export default function Home() {
             <div className="space-y-8">
               {currentLang.install.steps.map((step, idx) => (
                 <div key={idx} className="flex items-start gap-5">
-                  <div className="bg-[#c62829] text-white w-9 h-9 rounded-xl flex items-center justify-center font-black flex-shrink-0 text-base shadow-md shadow-red-500/20">
+                  <div className="bg-blue-600 text-white w-9 h-9 rounded-xl flex items-center justify-center font-black flex-shrink-0 text-base shadow-md shadow-blue-500/20">
                     {idx + 1}
                   </div>
                   <p className="text-base sm:text-lg text-slate-700 pt-1 font-medium leading-relaxed">{step}</p>
@@ -442,8 +441,8 @@ export default function Home() {
           <p className="text-lg text-slate-600 mb-12">{currentLang.support.desc}</p>
           
           <div className="grid sm:grid-cols-3 gap-5">
-            <a href="tel:+916206944296" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-red-300 hover:bg-red-50/40 transition">
-              <Phone className="w-7 h-7 text-[#c62829] mb-3" />
+            <a href="tel:+916206944296" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40 transition">
+              <Phone className="w-7 h-7 text-blue-600 mb-3" />
               <span className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">{currentLang.support.phone}</span>
               <span className="font-bold text-slate-800 text-sm">+91 6206944296</span>
             </a>
@@ -454,8 +453,8 @@ export default function Home() {
               <span className="font-bold text-green-900 text-sm">{currentLang.support.chatDesc}</span>
             </a>
 
-            <a href="mailto:raushanpandit718@gmail.com" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-red-300 hover:bg-red-50/40 transition">
-              <Mail className="w-7 h-7 text-[#c62829] mb-3" />
+            <a href="mailto:raushanpandit718@gmail.com" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40 transition">
+              <Mail className="w-7 h-7 text-blue-600 mb-3" />
               <span className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">{currentLang.support.email}</span>
               <span className="font-bold text-slate-800 text-sm">raushanpandit718@gmail.com</span>
             </a>
@@ -467,7 +466,7 @@ export default function Home() {
       <footer className="bg-slate-950 text-slate-400 py-14 px-4 border-t border-slate-900 text-center">
         <div className="max-w-4xl mx-auto flex flex-col items-center">
           <div className="flex items-center gap-2 mb-6 opacity-75">
-            <Zap className="w-5 h-5 text-[#c62829]" />
+            <Zap className="w-5 h-5 text-blue-500" />
             <span className="text-lg font-bold tracking-tight text-white">RD Master</span>
           </div>
           <p className="text-sm mb-4">© 2026 RD Master. All rights reserved.</p>
