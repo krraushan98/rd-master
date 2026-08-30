@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowLeft, UserMinus, Zap } from 'lucide-react';
 
-export default function PrivacyPolicy() {
+export default function AccountDeletion() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white pb-20">
       
@@ -27,13 +27,13 @@ export default function PrivacyPolicy() {
       {/* Header Section */}
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 text-center">
         <div className="w-16 h-16 rounded-2xl bg-blue-100/70 text-blue-600 flex items-center justify-center mx-auto mb-6 shadow-sm">
-          <ShieldCheck className="w-8 h-8" />
+          <UserMinus className="w-8 h-8" />
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
-          Privacy Policy
+          Account Deletion
         </h1>
         <p className="text-slate-500 font-medium">
-          Last Updated: August 2026
+          Data Removal Instructions for RD Master DOP Automation
         </p>
       </section>
 
@@ -45,40 +45,52 @@ export default function PrivacyPolicy() {
             {/* Section 1 */}
             <div>
               <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                <span className="text-blue-600">1.</span> Data Fiduciary Duty (DPDP Act Compliance)
+                <span className="text-blue-600">1.</span> How to Request Data Deletion
               </h2>
-              <p className="text-slate-600 leading-relaxed">
-                You act as the "Data Fiduciary" for any client data (names, account numbers, financial details) processed through this Application. It is your legal responsibility to ensure the lawful processing of this data under the Digital Personal Data Protection (DPDP) Act, 2023.
+              <p className="text-slate-600 leading-relaxed mb-6">
+                If you wish to delete your account and all associated data from <strong>RD Master DOP Automation</strong>, please follow the steps below. For security purposes, we must verify your identity through the Google account you used to sign in.
               </p>
+              
+              <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 sm:p-8">
+                <ol className="list-decimal list-inside space-y-4 text-slate-600 leading-relaxed">
+                  <li>
+                    Open the email client associated with the Google Account you used to log into RD Master.
+                  </li>
+                  <li>
+                    Compose a new email to: <strong className="text-slate-900">raushanpandit718@gmail.com</strong>
+                  </li>
+                  <li>
+                    Set the subject line to: <strong className="text-slate-900">"Account Deletion Request"</strong>
+                  </li>
+                  <li>
+                    In the body of the email, explicitly state that you want your account and all associated data permanently deleted.
+                  </li>
+                </ol>
+              </div>
             </div>
 
             {/* Section 2 */}
             <div>
               <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                <span className="text-blue-600">2.</span> Local Data Processing & Storage
+                <span className="text-blue-600">2.</span> What Data is Deleted?
               </h2>
-              <p className="text-slate-600 leading-relaxed">
-                The Application processes and stores sensitive personal data, including your India Post agency credentials and client data, strictly locally on your device. The Developer does not possess, transmit, or harvest your clients' data or your India Post agency credentials to external servers.
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Upon receiving your confirmed request, we will permanently delete the following within 7-14 business days:
               </p>
+              <ul className="list-disc list-inside space-y-2 text-slate-600 leading-relaxed pl-2">
+                <li>Your Google Sign-In association and Firebase Authentication user profile.</li>
+                <li>All personal identifiers (Name and Email Address) collected during sign-in.</li>
+                <li>All saved schedules, ASLAAS data, and fine calculations stored in our cloud database.</li>
+              </ul>
             </div>
 
             {/* Section 3 */}
             <div>
               <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                <span className="text-blue-600">3.</span> Security Practices (IT Rules, 2011)
+                <span className="text-blue-600">3.</span> Data Retention
               </h2>
               <p className="text-slate-600 leading-relaxed">
-                It is your legal responsibility to maintain the physical and digital security of your device to prevent unauthorized access to this data under the Information Technology (Reasonable Security Practices) Rules, 2011. We strongly recommend enabling Biometric Authentication to protect your device.
-              </p>
-            </div>
-
-            {/* Section 4 */}
-            <div>
-              <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                <span className="text-blue-600">4.</span> Contact Us
-              </h2>
-              <p className="text-slate-600 leading-relaxed">
-                If you have any questions regarding this privacy policy, please contact our support team via the Contact Us section in the app menu.
+                We do not retain any of your personal or financial data after the deletion process is complete. Once deleted, this action cannot be undone, and you will immediately lose access to all your saved RD Master workflows and cloud-synced accounts.
               </p>
             </div>
           </div>
@@ -92,7 +104,7 @@ export default function PrivacyPolicy() {
           <Zap className="w-4 h-4 text-blue-500" />
           <span className="text-sm font-bold tracking-tight text-slate-800">RD Master</span>
         </div>
-        <p className="text-xs text-slate-400">© 2026 RD Master. All rights reserved.</p>
+        <p className="text-xs text-slate-400">© {new Date().getFullYear()} RD Master. All rights reserved.</p>
       </footer>
 
     </main>

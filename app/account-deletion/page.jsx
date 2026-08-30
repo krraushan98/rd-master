@@ -22,7 +22,7 @@ export default function AccountDeletion() {
                 Open the email client associated with the Google Account you used to log into RD Master.
               </li>
               <li style={{ marginBottom: '10px' }}>
-                Compose a new email to: <strong>raushanpandit718@gmail.com</strong> <em>(Replace with your actual email)</em>
+                Compose a new email to: <strong>raushanpandit718@gmail.com</strong> 
               </li>
               <li style={{ marginBottom: '10px' }}>
                 Set the subject line to: <strong>"Account Deletion Request"</strong>
