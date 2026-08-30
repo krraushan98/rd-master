@@ -80,7 +80,7 @@ export default function AccountDeletion() {
               <ul className="list-disc list-inside space-y-2 text-slate-600 leading-relaxed pl-2">
                 <li>Your Google Sign-In association and Firebase Authentication user profile.</li>
                 <li>All personal identifiers (Name and Email Address) collected during sign-in.</li>
-                
+                <li>All DOP Agent Details</li>
               </ul>
             </div>
 
