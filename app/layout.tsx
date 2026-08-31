@@ -12,10 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'RD Master | The Ultimate DOP Agent Automation App',
   description: 'Automate schedule generation, calculate real-time fines, and manage over 20,000 Recurring Deposit accounts effortlessly. Built exclusively for India Post DOP agents.',
-  keywords: 'DOP agent app, RD automation, India Post RD schedule, post office agent software, calculate RD fine,DOP agent software',
+  applicationName: 'RD Master', // <-- Google uses this for Site Name
+  keywords: ['DOP agent app', 'RD automation', 'India Post RD schedule', 'post office agent software', 'calculate RD fine', 'DOP agent software'],
   openGraph: {
     title: 'RD Master | The Ultimate DOP Agent Automation App',
     description: 'Automate your RD schedules, calculate fines in real-time, and batch update ASLAAS numbers. Download the APK now.',
@@ -34,16 +35,31 @@ export const metadata = {
   verification: {
     google: 'NiKvBRISCtLjet8QdjT-ZhjgRw1U68SxYZcfTrQaUdE',
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  // Structured data telling Google explicitly what the Site Name is
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'RD Master',
+    alternateName: ['RD Master App', 'DOP RD Master'],
+    url: 'https://rd-master-web.vercel.app',
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-slate-50 text-slate-900">{children}</body>
     </html>
-  )
+  );
 }
