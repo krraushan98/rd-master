@@ -327,7 +327,7 @@ export default function Home() {
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-950 shadow-inner">
               <iframe 
                 className="w-full h-full"
-                src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID_HERE" 
+                src="https://www.youtube-nocookie.com/embed/2WBtqw64lz4?si=wZra2dw6FvhZmraS" 
                 title="RD Master Complete Video Tutorial" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
