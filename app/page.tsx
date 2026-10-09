@@ -1,16 +1,22 @@
 'use client'; // Required for React state in Next.js App Router
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { 
-  Download, ShieldCheck, Zap, FileText, Smartphone, Lock, 
-  CheckCircle2, Mail, Phone, MessageCircle, Calculator, 
-  RefreshCw, FileSpreadsheet, TrendingUp, PlayCircle, BookOpen, Globe 
+import {
+  Download, ShieldCheck, Zap, FileText, Smartphone, Lock,
+  CheckCircle2, Mail, Phone, MessageCircle, Calculator,
+  RefreshCw, FileSpreadsheet, TrendingUp, PlayCircle, BookOpen, Globe
 } from 'lucide-react';
 
 export default function Home() {
-  // 1. Define Language State
+  // 1. Define Language and Modal State
   const [lang, setLang] = useState('en');
+  const [showLangModal, setShowLangModal] = useState(false);
+
+  // Trigger language modal on initial page load
+  useEffect(() => {
+    setShowLangModal(true);
+  }, []);
 
   // 2. Translation Dictionary
   const t = {
@@ -21,9 +27,9 @@ export default function Home() {
         title1: "Automate Your RD Work.",
         title2: "Save Hours Every Day.",
         desc: "Eliminate manual portal errors. Generate massive schedules for 20,000+ amount, compute exact default fines in real time, and batch update ASLAAS records directly from your mobile phone.",
-        download: "Download APK (v1.0.0)",
+        download: "Download App",
         demo: "Watch Demo",
-        req: "Safe & Verified APK • Android 8.0 or Higher"
+        req: "Available on Google Play • Android 8.0 or Higher"
       },
       gallery: {
         title: "Engineered for Speed & Simplicity",
@@ -68,12 +74,12 @@ export default function Home() {
       },
       install: {
         title: "How to Install RD Master",
-        desc: "Follow these 4 simple steps to set up the APK on your Android device.",
+        desc: "Follow these 4 simple steps to install the app securely from the Google Play Store.",
         steps: [
-          "Tap the 'Download APK' button to download the latest release.",
-          "Open the downloaded APK file from your notification bar or 'Downloads' folder.",
-          "When prompted by Android, tap 'Settings' and enable 'Allow from unknown source'.",
-          "Tap 'Install', open RD Master, and log in to start automating."
+          "Tap the 'Download App' button above to open the Google Play Store.",
+          "Tap the 'Install' button on the RD Master app page.",
+          "Wait for the app to download and install automatically.",
+          "Open RD Master, log in, and start automating your agency workflow."
         ]
       },
       support: {
@@ -93,9 +99,9 @@ export default function Home() {
         title1: "अपना RD कार्य स्वचालित करें।",
         title2: "हर दिन घंटों बचाएं।",
         desc: "पोर्टल की मैन्युअल गलतियों को खत्म करें। 20,000+ पैसे के लिए एक साथ शेड्यूल जनरेट करें, वास्तविक समय में डिफ़ॉल्ट जुर्माना (fine) की गणना करें, और सीधे अपने मोबाइल फोन से ASLAAS रिकॉर्ड अपडेट करें।",
-        download: "APK डाउनलोड करें (v1.0.0)",
+        download: "ऐप डाउनलोड करें",
         demo: "डेमो देखें",
-        req: "सुरक्षित और सत्यापित APK • Android 8.0 या उच्चतर"
+        req: "Google Play पर उपलब्ध • Android 8.0 या उच्चतर"
       },
       gallery: {
         title: "गति और सरलता के लिए डिज़ाइन किया गया",
@@ -139,13 +145,13 @@ export default function Home() {
         li4: "एंटी-टैम्पर freeRASP इंजन"
       },
       install: {
-        title: "RD Master कैसे स्थापित (Install) करें",
-        desc: "अपने Android डिवाइस पर APK सेट करने के लिए इन 4 सरल चरणों का पालन करें।",
+        title: "RD Master कैसे इंस्टॉल करें",
+        desc: "Google Play Store से ऐप को सुरक्षित रूप से इंस्टॉल करने के लिए इन 4 सरल चरणों का पालन करें।",
         steps: [
-          "नवीनतम वर्ज़न डाउनलोड करने के लिए ऊपर 'APK डाउनलोड करें' बटन पर टैप करें।",
-          "अपने नोटिफिकेशन बार या 'Downloads' फ़ोल्डर से डाउनलोड की गई APK फ़ाइल खोलें।",
-          "Android द्वारा पूछे जाने पर, 'Settings' पर टैप करें और 'Allow from unkonwn source' चालू करें।",
-          "'Install' पर टैप करें, RD Master खोलें, और अपना काम स्वचालित करना शुरू करें।"
+          "Google Play Store खोलने के लिए ऊपर 'ऐप डाउनलोड करें' बटन पर टैप करें।",
+          "RD Master ऐप पेज पर 'Install' बटन पर टैप करें।",
+          "ऐप के स्वचालित रूप से डाउनलोड और इंस्टॉल होने की प्रतीक्षा करें।",
+          "RD Master खोलें, लॉग इन करें, और अपना काम स्वचालित करना शुरू करें।"
         ]
       },
       support: {
@@ -175,17 +181,47 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white">
-      
+    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white relative">
+
+      {/* Language Selection Popup Modal */}
+      {showLangModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-[2rem] p-8 max-w-sm w-full shadow-2xl text-center animate-in fade-in zoom-in-95 duration-300">
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center">
+                <Globe className="w-8 h-8 text-blue-600" />
+              </div>
+            </div>
+            <h2 className="text-2xl font-extrabold text-slate-900 mb-1">Select Language</h2>
+            <h3 className="text-xl font-bold text-slate-600 mb-8">अपनी भाषा चुनें</h3>
+
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => { setLang('en'); setShowLangModal(false); }}
+                className="w-full bg-slate-50 hover:bg-blue-600 text-slate-800 hover:text-white font-bold py-4 px-6 rounded-2xl border border-slate-200 hover:border-blue-600 transition-all text-lg shadow-sm"
+              >
+                English
+              </button>
+              <button
+                onClick={() => { setLang('hi'); setShowLangModal(false); }}
+                className="w-full bg-slate-50 hover:bg-blue-600 text-slate-800 hover:text-white font-bold py-4 px-6 rounded-2xl border border-slate-200 hover:border-blue-600 transition-all text-xl shadow-sm"
+              >
+                हिंदी
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navigation */}
       <nav className="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md shadow-blue-500/20">
-              <Image 
-                src="/app-icon.png" 
-                alt="RD Master Logo" 
-                fill 
+              <Image
+                src="/app-icon.png"
+                alt="RD Master Logo"
+                fill
                 className="object-cover"
                 priority
               />
@@ -194,13 +230,13 @@ export default function Home() {
               RD Master
             </span>
           </div>
-          
+
           <div className="flex items-center gap-6">
             <a href="#features" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-blue-600 transition">{currentLang.nav.features}</a>
             <a href="#how-to-use" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-blue-600 transition">{currentLang.nav.tutorials}</a>
             <a href="#support" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-blue-600 transition">{currentLang.nav.support}</a>
-            
-            <button 
+
+            <button
               onClick={() => setLang(lang === 'en' ? 'hi' : 'en')}
               className="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition bg-slate-100 px-3 py-2 rounded-lg text-sm font-bold"
             >
@@ -208,8 +244,8 @@ export default function Home() {
               {currentLang.nav.langToggle}
             </button>
 
-            <a 
-              href="#download" 
+            <a
+              href="#download"
               className="hidden sm:block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-blue-500/30 transition text-sm"
             >
               {currentLang.nav.getApp}
@@ -225,27 +261,37 @@ export default function Home() {
             <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
             {currentLang.hero.badge}
           </div>
-          
+
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.15]">
             {currentLang.hero.title1} <br />
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent">
               {currentLang.hero.title2}
             </span>
           </h1>
-          
-          <p className="text-lg sm:text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+
+          <p id="download" className="text-lg sm:text-xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
             {currentLang.hero.desc}
           </p>
-          
-          <div id="download" className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a 
-              href="https://github.com/krraushan98/rd-master/releases/download/v1.0.7/RdMaster_v_1.7.apk" 
+
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.raushan.rdmaster"
               className="w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-9 py-4 rounded-2xl text-lg font-bold shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all"
             >
-              <Download className="w-6 h-6" />
+              <svg
+                className="w-6 h-6"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1z" />
+                <path d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z" />
+                <path d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z" />
+                <path d="M104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
+              </svg>
               {currentLang.hero.download}
             </a>
-            <a 
+            <a
               href="#how-to-use"
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-7 py-4 rounded-2xl text-lg font-semibold hover:bg-slate-50 transition"
             >
@@ -263,7 +309,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold tracking-tight text-slate-900">{currentLang.gallery.title}</h2>
           <p className="text-slate-600 mt-2">{currentLang.gallery.desc}</p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-lg shadow-slate-100">
             <div className="aspect-[9/16] bg-gradient-to-b from-blue-100/50 to-slate-100 rounded-2xl relative overflow-hidden flex items-center justify-center border border-slate-200">
@@ -298,8 +344,8 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {currentLang.featuresList.map((feat, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-200/80 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
@@ -325,11 +371,11 @@ export default function Home() {
         <div className="grid lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-3xl border border-slate-200/80 shadow-md">
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-950 shadow-inner">
-              <iframe 
+              <iframe
                 className="w-full h-full"
-                src="https://www.youtube-nocookie.com/embed/2WBtqw64lz4?si=wZra2dw6FvhZmraS" 
-                title="RD Master Complete Video Tutorial" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                src="https://www.youtube-nocookie.com/embed/2WBtqw64lz4?si=wZra2dw6FvhZmraS"
+                title="RD Master Complete Video Tutorial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
@@ -348,8 +394,8 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-3">{currentLang.tutorial.pdfTitle}</h3>
                 <p className="text-blue-100 text-sm leading-relaxed mb-6">{currentLang.tutorial.pdfDesc}</p>
               </div>
-              <a 
-                href="/docs/RD_Master_User_Manual.pdf" 
+              <a
+                href="/docs/RD_Master_User_Manual.pdf"
                 download
                 className="w-full bg-white text-blue-900 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-50 transition shadow-md"
               >
@@ -364,9 +410,9 @@ export default function Home() {
                 {currentLang.tutorial.reqTitle}
               </h4>
               <ul className="text-sm text-slate-600 space-y-2">
-                <li>• {currentLang.tutorial.req1}</li>
-                <li>• {currentLang.tutorial.req2}</li>
-                <li>• {currentLang.tutorial.req3}</li>
+                <li>{currentLang.tutorial.req1}</li>
+                <li>{currentLang.tutorial.req2}</li>
+                <li>{currentLang.tutorial.req3}</li>
               </ul>
             </div>
           </div>
@@ -411,7 +457,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Installation Steps */}
+      {/* Installation Steps (Updated for Play Store) */}
       <section className="bg-slate-100/70 py-24 border-t border-slate-200/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -439,7 +485,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">{currentLang.support.title}</h2>
           <p className="text-lg text-slate-600 mb-12">{currentLang.support.desc}</p>
-          
+
           <div className="grid sm:grid-cols-3 gap-5">
             <a href="tel:+916206944296" className="flex flex-col items-center p-6 rounded-2xl bg-slate-50 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40 transition">
               <Phone className="w-7 h-7 text-blue-600 mb-3" />
