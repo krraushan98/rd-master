@@ -13,14 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rd-master.vercel.app'),
   title: 'RD Master | The Ultimate DOP Agent Automation App',
   description: 'Automate schedule generation, calculate real-time fines, and manage over 20,000 Recurring Deposit accounts effortlessly. Built exclusively for India Post DOP agents.',
   applicationName: 'RD Master', // <-- Google uses this for Site Name
   keywords: ['DOP agent app', 'RD automation', 'India Post RD schedule', 'post office agent software', 'calculate RD fine', 'DOP agent software'],
+  alternates: {
+    canonical: '/', 
+  },
   openGraph: {
     title: 'RD Master | The Ultimate DOP Agent Automation App',
     description: 'Automate your RD schedules, calculate fines in real-time, and batch update ASLAAS numbers. Download the APK now.',
-    url: 'https://rd-master-web.vercel.app',
+    url: 'https://rd-master.vercel.app',
     siteName: 'RD Master',
     images: [
       {
@@ -47,8 +51,8 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'RD Master',
-    alternateName: ['RD Master App', 'DOP RD Master'],
-    url: 'https://rd-master-web.vercel.app',
+    alternateName: ['RD Master App', 'DOP RD Master','DOP Agent Software'],
+    url: 'https://rd-master.vercel.app',
   };
 
   return (
