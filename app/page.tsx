@@ -396,7 +396,7 @@ export default function Home() {
               </div>
               <a
                 href="/docs/RD_Master_User_Manual.pdf"
-                download
+                // download
                 className="w-full bg-white text-blue-900 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-50 transition shadow-md"
               >
                 <Download className="w-5 h-5" />
