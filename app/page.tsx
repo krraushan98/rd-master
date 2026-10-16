@@ -18,6 +18,15 @@ export default function Home() {
     setShowLangModal(true);
   }, []);
 
+  // Structured Data (JSON-LD) for Google Site Name & Rich Results
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RD Master",
+    "alternateName": ["RD Master DOP", "RD Master App", "rd-master"],
+    "url": "https://rd-master.vercel.app/"
+  };
+
   const t = {
     en: {
       nav: { features: "Features", tutorials: "Tutorials", support: "Support", tools: "Free Tools", getApp: "Get App", langToggle: "हिंदी" },
@@ -182,6 +191,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white relative pb-16">
       
+      {/* JSON-LD Structured Data for Google Site Name */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Sticky Floating WhatsApp Button - FIXED FLEX GAP ISSUE */}
       <a 
         href="https://wa.me/+916206944296?text=Hello,%20I%20am%20a%20DOP%20Agent.%20I%20want%20a%20free%20demo%20of%20RD%20Master!" 
